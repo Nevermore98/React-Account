@@ -102,6 +102,7 @@
   "devDependencies": {
     "@types/react-router-dom": "^5.1.8",
     "@types/styled-components": "5.0.1",
+    "@types/webpack-env": "1.15.1",
     "add": "^2.0.6",
     "node-sass": "npm:dart-sass@1.25.0",
     "svg-sprite-loader": "4.2.2",
