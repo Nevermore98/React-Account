@@ -10,7 +10,6 @@ import Statistics from './views/Statistics';
 import Tags from './views/Tags';
 import NoMatch from './views/Nomatch';
 
-
 function App() {
   return (
     <Router>
@@ -32,13 +31,5 @@ function App() {
     </Router>
   );
 }
-
-
-
-
-
-
-
-
 
 export default App;
