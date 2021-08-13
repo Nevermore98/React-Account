@@ -1,119 +1,19 @@
 import Layout from '../components/Layout';
 import React from 'react';
 import styled from 'styled-components';
+import TagsSection from './Money/TagsSection';
+import NotesSection from './Money/NotesSection';
+import CategorySection from './Money/CategorySectionx';
+import NumberPadSection from './Money/NumberPadSection';
 
-const TagsSection = styled.section`
-  background: #FFFFFF;
-  padding: 12px 16px;
-
-  > ol {
-    margin: 0 -12px;
-
-    > li {
-      background: #D9D9D9;
-      border-radius: 18px;
-      display: inline-block;
-      padding: 3px 18px;
-      font-size: 14px;
-      margin: 8px 12px;
-    }
-  }
-
-  > button {
-    background: none;
-    border: none;
-    padding: 2px 4px;
-    border-bottom: 1px solid #333;
-    color: #666;
-    margin-top: 8px;
-  }
-`;
-
-const NotesSection = styled.section`
-  background: #f5f5f5;
-  padding: 0 16px;
-  font-size: 14px;
-
-  > label {
-    display: flex;
-    align-items: center;
-
-    > span {
-      margin-right: 16px;
-      white-space: nowrap;
-    }
-
-    > input {
-      display: block;
-      width: 100%;
-      height: 72px;
-      background: none;
-      border: none;
-    }
-  }
-`;
-
-const CategorySection = styled.section`
-  font-size: 24px;
-
-  > ul {
-    display: flex;
-    background: #c4c4c4;
-
-    > li {
-      position: relative;
-      width: 50%;
-      text-align: center;
-      padding: 16px 0;
-
-      &.selected::after {
-        position: absolute;
-        content: '';
-        display: block;
-        height: 3px;
-        background: #333;
-        bottom: 0;
-        width: 100%;
-        left: 0;
-      }
-    }
-  }
-`;
-
-const NumberPadSection = styled.section`
+const MyLayout = styled(Layout)`
   display: flex;
   flex-direction: column;
-
-  > .output {
-    background: white;
-    font-size: 36px;
-    line-height: 72px;
-    text-align: right;
-    padding: 0 16px;
-  }
-
-  > .pad {
-    > button {
-      font-size: 18px;
-      float: left;
-      width: 25%;
-      height: 64px;
-      border: 1px solid #f5f5f5;
-
-      &.ok {
-        height: 128px;
-        float: right;
-      }
-      &.zero {
-        width: 50%;
-      }
-    }
-  }
 `;
 
 function Money() {
   return (
-    <Layout>
+    <MyLayout>
       <TagsSection>
         <ol>
           <li>衣</li>
@@ -156,8 +56,8 @@ function Money() {
           <button>.</button>
         </div>
       </NumberPadSection>
-    </Layout>
-  );
+    </MyLayout>
+);
 }
 
 export default Money;
