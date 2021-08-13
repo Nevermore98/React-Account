@@ -4,8 +4,6 @@ import React from 'react';
 import Icon from './Icon';
 
 
-
-
 const NavWrapper = styled.nav`
   line-height: 24px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
@@ -14,14 +12,17 @@ const NavWrapper = styled.nav`
     display: flex;
 
     > li {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       width: 33.3333%;
-      padding: 4px;
+      text-align: center;
 
-      .icon{
+      > a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4px;
+      }
+
+      .icon {
         width: 24px;
         height: 24px;
       }
@@ -34,16 +35,22 @@ const Nav = () => {
     <NavWrapper>
       <ul>
         <li>
-          <Icon name="tag"/>
-          <Link to="/tags">标签页</Link>
+          <Link to="/tags">
+            <Icon name="tag"/>
+            标签页
+          </Link>
         </li>
         <li>
-          <Icon name="money"/>
-          <Link to="/money">记账页</Link>
+          <Link to="/money">
+            <Icon name="money"/>
+            记账页
+          </Link>
         </li>
         <li>
-          <Icon name="chart"/>
-          <Link to="/statistics">统计页</Link>
+          <Link to="/statistics">
+            <Icon name="chart"/>
+            统计页
+          </Link>
         </li>
       </ul>
     </NavWrapper>
