@@ -29,7 +29,7 @@ const Wrapper = styled.section`
         width: 50%;
       }
 
-      &:hover {
+      &:active {
         background: #C4C4C4;
       }
     }
