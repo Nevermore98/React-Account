@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TagEdit: React.FC = () => {
+const Tag: React.FC = () => {
   return (
     <div>
       hi
@@ -8,4 +8,4 @@ const TagEdit: React.FC = () => {
   );
 };
 
-export default TagEdit;
+export default Tag;

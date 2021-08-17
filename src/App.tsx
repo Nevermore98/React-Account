@@ -7,7 +7,7 @@ import Statistics from './views/Statistics';
 import Tags from './views/Tags';
 import NoMatch from './views/Nomatch';
 import styled from 'styled-components';
-import TagEdit from './views/TagEdit';
+import Tag from './views/Tag';
 
 const AppWrapper = styled.div`
   color: #333
@@ -21,8 +21,8 @@ function App() {
           <Route exact path="/tags">
             <Tags/>
           </Route>
-          <Route exact path="/tags/:tag">
-            <TagEdit/>
+          <Route exact path="/tags/:id">
+            <Tag/>
           </Route>
           <Route exact path="/money">
             <Money/>
