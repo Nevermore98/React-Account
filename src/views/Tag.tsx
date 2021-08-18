@@ -12,16 +12,16 @@ type Params = {
 }
 
 const Topbar = styled.header`
-  display:flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   line-height: 20px;
   padding: 14px;
-  background:white;
+  background: white;
 `;
 
 const InputWrapper = styled.div`
-  background:white;
+  background: white;
   padding: 0 16px;
   margin-top: 8px;
 `;
@@ -34,24 +34,31 @@ const ButtonWrapper = styled.div`
 `;
 
 const Tag: React.FC = () => {
-  const {findTag} = useTags();
-  let {id} = useParams<Params>();
-  const tag = findTag(parseInt(id))
+  const {findTag, updateTag, deleteTag} = useTags();
+  let {id: idString} = useParams<Params>();
+  const tag = findTag(parseInt(idString));
 
   return (
     <Layout>
       <div>
         <Topbar>
-          <Icon name={"left"}/>
+          <Icon name={'left'}/>
           <span>编辑标签</span>
           <Icon/>
         </Topbar>
       </div>
       <InputWrapper>
-        <Input label="标签名" type="text" placeholder="标签名" value={tag.name}/>
+        <Input label="标签名"
+               type="text"
+               placeholder="标签名"
+               value={tag.name}
+               onChange={(e) => {
+                 updateTag(tag.id, {name: e.target.value});
+               }}
+        />
       </InputWrapper>
       <ButtonWrapper>
-        <Button>删除标签</Button>
+        <Button onClick={()=>{deleteTag(tag.id)}}>删除标签</Button>
       </ButtonWrapper>
     </Layout>
   );
