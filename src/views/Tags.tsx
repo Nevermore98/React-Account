@@ -3,7 +3,7 @@ import React from 'react';
 import useTags from 'useTags';
 import styled from 'styled-components';
 import Icon from 'components/Icon';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Button from 'components/Button';
 
 const TagList = styled.ol`
@@ -15,9 +15,10 @@ const TagList = styled.ol`
     line-height: 20px;
     margin-left: 16px;
     margin-right: 16px;
-    > a{
+
+    > a {
       padding: 12px 16px 12px 0;
-      display:flex;
+      display: flex;
       justify-content: space-between;
       align-items: center;
     }
@@ -31,7 +32,7 @@ const ButtonWrapper = styled.div`
 `;
 
 function Tags() {
-  const {tags} = useTags();
+  const {tags, addTag} = useTags();
   return (
     <Layout>
       <TagList>
@@ -46,7 +47,7 @@ function Tags() {
       </TagList>
 
       <ButtonWrapper>
-        <Button>新增标签</Button>
+        <Button onClick={addTag}>新增标签</Button>
       </ButtonWrapper>
     </Layout>
   );
