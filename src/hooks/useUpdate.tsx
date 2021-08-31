@@ -12,5 +12,4 @@ const useUpdate = (fn: () => void, deps: any[]) => {
     }
   }, deps); // 不可变数据
 };
-
 export default useUpdate;
