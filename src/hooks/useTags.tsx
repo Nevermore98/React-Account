@@ -49,10 +49,16 @@ const useTags = () => {
     if (tagName !== null && tagName !== '') {
       setTags([...tags, {id: createId(), name: tagName}]);
     } else {
-      window.alert('标签名不能为空')
+      window.alert('标签名不能为空');
     }
   };
-  return {tags, addTag, setTags, findTag, updateTag, findTagIndex, deleteTag};
+
+  const getName = (id: number) => {
+    const tag = tags.filter(t => t.id === id)[0];
+    return tag ? tag.name : '';
+  };
+
+  return {tags, addTag, getName, setTags, findTag, updateTag, findTagIndex, deleteTag};
 };
 
 export default useTags;
