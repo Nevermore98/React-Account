@@ -31,6 +31,10 @@ const ButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 400px;
+  
+  @media(max-height: 570px){
+    margin-top: 300px;
+  }
 `;
 
 const Tag: React.FC = () => {

@@ -13,6 +13,10 @@ const Wrapper = styled.section`
       width: 50%;
       text-align: center;
       padding: 16px 0;
+      
+      @media(max-height: 570px){
+        padding: 12px 0;
+      }
 
       &.selected::after {
         position: absolute;

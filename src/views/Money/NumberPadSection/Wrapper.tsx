@@ -10,6 +10,12 @@ const Wrapper = styled.section`
     line-height: 72px;
     text-align: right;
     padding: 0 16px;
+    
+    @media (max-height: 570px){
+      & {
+        line-height: 68px;
+      }
+    }
   }
 
   > .pad {
@@ -31,6 +37,16 @@ const Wrapper = styled.section`
 
       &:active {
         background: #C4C4C4;
+      }
+    }
+
+    @media (max-height: 570px) {
+      > button {
+        height: 56px;
+
+        &.ok {
+          height: 112px;
+        }
       }
     }
   }
