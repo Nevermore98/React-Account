@@ -1,6 +1,7 @@
 {
   "name": "react-account",
   "version": "0.1.0",
+  "homepage": "https://nevermore98.github.io/react-account-website/",
   "private": true,
   "dependencies": {
     "@babel/core": "7.12.3",
@@ -81,7 +82,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "deploy": "sh scripts/deploy.sh"
   },
   "eslintConfig": {
     "extends": [
