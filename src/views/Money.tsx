@@ -12,12 +12,12 @@ const MyLayout = styled(Layout)`
   flex-direction: column;
 `;
 
-type Category = '-' | '+'
+type Category = 'expense' | 'income'
 
 const defaultFormData = {
   tagIds: [] as number[],
   note: '',
-  category: '-' as Category,
+  category: 'expense' as Category,
   amount: 0
 };
 

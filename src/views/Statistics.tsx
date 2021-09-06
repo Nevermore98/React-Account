@@ -32,7 +32,7 @@ const Header = styled.h3`
 `;
 
 function Statistics() {
-  const [category, setCategory] = useState<'-' | '+'>('-');
+  const [category, setCategory] = useState<'expense' | 'income'>('expense');
   const {records} = useRecords();
   const {getName} = useTags();
   const hash: { [K: string]: RecordItem[] } = {};
