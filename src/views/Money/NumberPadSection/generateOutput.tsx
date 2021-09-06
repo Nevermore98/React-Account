@@ -12,11 +12,21 @@ const generateOutput = (text: string, output: string) => {
     case '9':
       if (output === '0') {
         return text;
-      } else {
-        return output + text;
       }
+      // 仅保留小数点前 9 位
+      if (output.length >= 9 && output.indexOf('.') === -1) {
+        console.log(output);
+        return output;
+      }
+      // 仅保留小数点后 2 位
+      if(output.indexOf('.') >= 0 && output.split('.')[1].length >= 2){
+        return output;
+      }
+      return output + text;
     case '.':
-      if (output.indexOf('.') >= 0) {return output;}
+      if (output.indexOf('.') >= 0) {
+        return output;
+      }
       return output + '.';
     case '删除':
       if (output.length === 1) {

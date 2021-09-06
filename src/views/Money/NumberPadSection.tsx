@@ -9,18 +9,17 @@ type Props = {
 }
 
 const NumberPadSection: React.FC<Props> = (props) => {
-  const [output, _setOutput] = useState(props.value.toString());
-  const setOutput = (output: string) => {
-    let newOutput: string;
-    if (output.length > 16) {
-      newOutput = output.slice(0, 16);
-    } else if (output.length === 0) {
-      newOutput = '0';
+  const [output, setOutput] = useState(props.value.toString());
+
+  const handleOutput = (input: string) => {
+    let output: string;
+    if (input.length === 0) {
+      output = '0';
     } else {
-      newOutput = output;
+      output = input;
     }
-    _setOutput(newOutput);
-    props.onChange(parseFloat(newOutput));
+    setOutput(output);
+    props.onChange(parseFloat(output));
   };
 
   const onClickButtonWrapper = (e: React.MouseEvent) => {
@@ -31,7 +30,7 @@ const NumberPadSection: React.FC<Props> = (props) => {
       return;
     }
     if ('0123456789.'.split('').concat(['删除', '清空']).indexOf(text) >= 0) {
-      setOutput(generateOutput(text, output));
+      handleOutput(generateOutput(text, output));
     }
   };
 
