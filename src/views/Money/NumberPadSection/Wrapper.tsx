@@ -5,13 +5,19 @@ const Wrapper = styled.section`
   flex-direction: column;
 
   > .output {
+    display: flex;
+    align-items: center;
     background: white;
-    font-size: 36px;
-    line-height: 72px;
-    text-align: right;
-    padding: 0 16px;
-    
-    @media (max-height: 570px){
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: left;
+    padding: 16px 16px;
+
+    .dollar {
+      font-size: 28px;
+    }
+
+    @media (max-height: 570px) {
       & {
         line-height: 68px;
       }
@@ -19,16 +25,24 @@ const Wrapper = styled.section`
   }
 
   > .pad {
+    height: 100%;
+    padding: 4px;
+    
     > button {
-      font-size: 18px;
+      font-size: 20px;
+      font-weight: bold;
+      height: 64px;
       float: left;
       width: 25%;
-      height: 64px;
-      border: 1px solid #f5f5f5;
+      border: 4px solid #f5f5f5;
+      border-radius: 8px;
+      background: white;
 
       &.ok {
-        height: 128px;
         float: right;
+        height: 128px;
+        opacity: ${props => props === '0' ? 0.6 : 1};
+
       }
 
       &.zero {
@@ -36,7 +50,7 @@ const Wrapper = styled.section`
       }
 
       &:active {
-        background: #C4C4C4;
+        background: rgb(250, 250, 250);
       }
     }
 
