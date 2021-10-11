@@ -22,7 +22,7 @@ const defaultFormData = {
 };
 
 const CategoryWrapper = styled.div`
-  background: #c4c4c4;
+  background: #d9d9d9;
 `;
 
 function Money() {

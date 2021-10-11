@@ -50,7 +50,7 @@ const Wrapper = styled.section`
       }
 
       &:active {
-        background: rgb(250, 250, 250);
+        background: #F5F5F5;
       }
     }
 
